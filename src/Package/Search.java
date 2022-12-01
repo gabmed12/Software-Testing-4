@@ -7,14 +7,17 @@ public class Search {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		File file = new File(args[1]);
+		String word = args[1];
+		String path = args[2];
+		
+		File file = new File(path);
 		
 		Scanner scan = new Scanner(file);
 		
 		while (scan.hasNextLine()) {
 			String nextLine = scan.nextLine();
 			
-			if (nextLine.contains(args[0])) {
+			if (nextLine.contains(word)) {
 				System.out.println(nextLine);
 			}
 	    }
